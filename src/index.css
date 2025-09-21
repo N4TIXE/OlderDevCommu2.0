@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+*{
+  font-family: "Concert One","Mitr", sans-serif;
+}
+body{
+  background: url("../public/BG1.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-height: 100vh;
+  min-width: auto;
+}
