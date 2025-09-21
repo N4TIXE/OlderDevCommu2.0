@@ -63,12 +63,12 @@ const Profile = () => {
         const data = new FormData();
         data.append("file", file);
         
-        // --- 👇 ใช้ข้อมูลล่าสุดที่ถูกต้อง ---
+        // ---  ใช้ข้อมูลล่าสุดที่ถูกต้อง ---
         data.append("upload_preset", "OlderDevCommu");
         data.append("cloud_name", "dmzn9kjpa"); // แก้ไข Cloud Name ตรงนี้
 
         try {
-            // 1. อัปโหลดไป Cloudinary
+            //  อัปโหลดไป Cloudinary
             const uploadRes = await fetch(`https://api.cloudinary.com/v1_1/dmzn9kjpa/image/upload`, { // แก้ไข URL ตรงนี้ด้วย
                 method: "POST",
                 body: data,
@@ -77,7 +77,7 @@ const Profile = () => {
             const imageData = await uploadRes.json();
             const newProfilePicUrl = imageData.secure_url;
 
-            // 2. บันทึก URL ลง Backend
+            //  บันทึก URL ลง Backend
             const response = await fetch('http://localhost:5000/api/profile/picture', {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${token}` },
